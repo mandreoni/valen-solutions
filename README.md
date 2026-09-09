@@ -1,8 +1,11 @@
 # valen.solutions
 
-Sitio estático de Valen Solutions. Sin build.
+Sitio estático de Valen Solutions. Sin build en el deploy: el CSS ya viene compilado en el repo.
 
-- `index.html` español · `en/index.html` inglés. Estilos con Tailwind por CDN (config inline en el `<head>`), íconos Material Symbols y fuentes de Google Fonts.
+- `index.html` español · `en/index.html` inglés. Estilos en `site.css`, compilado con Tailwind (config en `tailwind.config.js`); íconos Material Symbols y fuentes de Google Fonts.
+- Si tocás clases de Tailwind en los HTML, recompilá y commiteá `site.css`:
+
+      npm install && npx tailwindcss -c tailwind.config.js -i src/input.css -o site.css --minify
 - `gracias.html` / `en/thanks.html`: páginas post-envío, usan `style.css`.
 - Para tocar textos, editar los dos HTML a mano: son la misma estructura, uno por idioma.
 - Editar y hacer `git push` a `main`: GitHub Pages publica solo.

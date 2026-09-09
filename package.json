@@ -1,0 +1,25 @@
+{
+  "name": "valen-solutions",
+  "version": "1.0.0",
+  "description": "Sitio estático de Valen Solutions. Sin build.",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mandreoni/valen-solutions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/mandreoni/valen-solutions/issues"
+  },
+  "homepage": "https://github.com/mandreoni/valen-solutions#readme",
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.11",
+    "tailwindcss": "^3.4.19"
+  }
+}
