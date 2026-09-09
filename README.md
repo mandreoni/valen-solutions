@@ -18,7 +18,7 @@ Sitio estático de Valen Solutions. Sin build en el deploy: el CSS ya viene comp
    y activar "Enforce HTTPS" en Settings → Pages.
 2. **Email**: Cloudflare → Email Routing → `contact@valen.solutions` → casilla de la empresa.
 3. **Formulario**: pedir access key en https://web3forms.com con `contact@valen.solutions`
-   y reemplazar `WEB3FORMS_ACCESS_KEY` en `index.html` y `en/index.html`.
+   Ya está configurado en `index.html` y `en/index.html` (formulario "Valen Solutions - Diagnostico" en app.web3forms.com, cuenta martinandreoni@gmail.com).
    El form ya trae hCaptcha (clave compartida de Web3Forms, no hace falta registrar nada); en localhost muestra un aviso rojo que desaparece en el dominio real.
 
 ## Probar local
