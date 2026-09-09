@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Valen Solutions | Software, Cybersecurity &amp; AI</title>
+<meta name="description" content="Custom software, cybersecurity, artificial intelligence and autonomous systems for small and medium businesses.."/>
+<link rel="alternate" hreflang="es" href="https://valen.solutions/"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+    }
+    ::-webkit-scrollbar { display: none; }
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-lowest": "#060e20",
+            "on-error": "#690005",
+            "surface-bright": "#31394d",
+            "surface-tint": "#4edea3",
+            "on-surface-variant": "#bbcabf",
+            "on-primary-fixed": "#002113",
+            "on-error-container": "#ffdad6",
+            "on-tertiary": "#00344d",
+            "surface-container-high": "#222a3d",
+            "on-secondary": "#003640",
+            "secondary-fixed": "#acedff",
+            "error": "#ffb4ab",
+            "on-tertiary-container": "#003d59",
+            "tertiary-fixed": "#c9e6ff",
+            "on-primary-container": "#00422b",
+            "primary-fixed": "#6ffbbe",
+            "surface-dim": "#0b1326",
+            "on-tertiary-fixed": "#001e2f",
+            "surface": "#0b1326",
+            "tertiary": "#89ceff",
+            "primary-fixed-dim": "#4edea3",
+            "surface-container-low": "#131b2e",
+            "on-tertiary-fixed-variant": "#004c6e",
+            "on-secondary-container": "#00424e",
+            "background": "#0b1326",
+            "tertiary-container": "#23acf1",
+            "surface-container-highest": "#2d3449",
+            "outline": "#86948a",
+            "on-background": "#dae2fd",
+            "on-primary-fixed-variant": "#005236",
+            "on-secondary-fixed": "#001f26",
+            "surface-container": "#171f33",
+            "error-container": "#93000a",
+            "secondary": "#4cd7f6",
+            "tertiary-fixed-dim": "#89ceff",
+            "outline-variant": "#3c4a42",
+            "secondary-container": "#03b5d3",
+            "inverse-primary": "#006c49",
+            "surface-variant": "#2d3449",
+            "inverse-surface": "#dae2fd",
+            "inverse-on-surface": "#283044",
+            "primary-container": "#10b981",
+            "on-surface": "#dae2fd",
+            "on-primary": "#003824",
+            "primary": "#4edea3",
+            "secondary-fixed-dim": "#4cd7f6",
+            "on-secondary-fixed-variant": "#004e5c"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "block-2xs": "0.25rem",
+            "block-xs": "0.5rem",
+            "block-sm": "0.75rem",
+            "block-md": "1rem",
+            "block-lg": "1.5rem",
+            "block-xl": "2rem",
+            "block-2xl": "3rem",
+            "block-3xl": "4.5rem",
+            "block-4xl": "6rem"
+          },
+          fontSize: {
+            "headline-xl": ["clamp(28px, 4vw, 40px)", { lineHeight: "1.2", letterSpacing: "-0.03em", fontWeight: "600" }],
+            "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px" }],
+            "body-md": ["15px", { lineHeight: "24px" }],
+            "body-sm": ["13px", { lineHeight: "20px" }],
+            "label-caps": ["11px", { lineHeight: "16px", letterSpacing: "0.12em", fontWeight: "700" }],
+            "code-telemetry": ["12px", { lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "500" }]
+          },
+          fontFamily: {
+            "code-telemetry": ["Space Grotesk", "monospace"],
+            "label-caps": ["Space Grotesk", "sans-serif"],
+            "body-md": ["Hanken Grotesk", "sans-serif"],
+            "body-lg": ["Hanken Grotesk", "sans-serif"],
+            "body-sm": ["Hanken Grotesk", "sans-serif"],
+            "display-hero": ["Space Grotesk", "sans-serif"],
+            "headline-xl": ["Space Grotesk", "sans-serif"],
+            "headline-lg": ["Space Grotesk", "sans-serif"],
+            "headline-md": ["Space Grotesk", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-primary/20 selection:text-primary">
+<!-- HEADER -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-container-high shadow-[0_1px_12px_rgba(0,0,0,0.4)]">
+<div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-block-md">
+<!-- Brand Logo & Identity -->
+<a class="flex items-center gap-block-sm focus:outline-none group" href="/en/">
+<div class="h-9 w-9 flex-shrink-0 flex items-center justify-center">
+<img alt="" class="h-8 w-auto object-contain" src="/favicon.svg"/>
+</div>
+<span class="font-headline-md text-[19px] tracking-tight uppercase font-bold text-on-surface group-hover:text-primary transition-colors flex items-center gap-1.5">
+            VALEN <span class="text-secondary font-medium">SOLUTIONS</span>
+</span>
+</a>
+<!-- Navigation Links -->
+<nav class="hidden lg:flex items-center gap-block-xs">
+<a class="font-code-telemetry text-code-telemetry text-primary bg-surface-container-high px-block-sm py-block-xs uppercase transition-all tracking-wider" href="#inicio">Home</a>
+<a class="font-code-telemetry text-code-telemetry text-on-surface-variant hover:text-on-surface hover:bg-surface-container px-block-sm py-block-xs uppercase transition-all tracking-wider" href="#servicios">Services</a>
+<a class="font-code-telemetry text-code-telemetry text-on-surface-variant hover:text-on-surface hover:bg-surface-container px-block-sm py-block-xs uppercase transition-all tracking-wider" href="#por-que-valen">About</a>
+<a class="font-code-telemetry text-code-telemetry text-on-surface-variant hover:text-on-surface hover:bg-surface-container px-block-sm py-block-xs uppercase transition-all tracking-wider" href="#como-trabajamos">How We Work</a>
+<a class="font-code-telemetry text-code-telemetry text-on-surface-variant hover:text-on-surface hover:bg-surface-container px-block-sm py-block-xs uppercase transition-all tracking-wider" href="#contacto">Contact</a>
+</nav>
+<!-- Right Header Actions & Language Switcher -->
+<div class="flex items-center gap-block-sm">
+<!-- Language Selector -->
+<div class="flex items-center bg-surface-container-low border border-outline-variant/40 px-2 py-1 gap-1.5 font-code-telemetry text-xs">
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="/" hreflang="es" title="Cambiar a español">ES</a>
+<span class="text-on-surface-variant/40">/</span>
+<span class="text-primary font-bold">EN</span>
+</div>
+<!-- CTA Agendar -->
+<a class="hidden sm:inline-flex items-center gap-1.5 font-label-caps text-label-caps px-block-md py-block-xs bg-primary text-on-primary hover:bg-secondary hover:text-on-secondary transition-all uppercase tracking-wider font-semibold shadow-md" href="#contacto">
+<span>Book a Diagnostic</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</header>
+<main class="w-full pt-20 bg-surface min-h-screen" id="inicio">
+<div class="flex flex-col w-full">
+<!-- HERO SECTION -->
+<div class="relative w-full overflow-hidden border-b border-surface-container-high/60">
+<!-- Ambient background radial glow -->
+<div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[1100px] h-[500px] bg-gradient-to-b from-primary/15 via-secondary/10 to-transparent blur-3xl pointer-events-none -z-10"></div>
+<section class="max-w-7xl mx-auto px-6 lg:px-12 pt-block-2xl pb-block-3xl w-full">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-block-xl items-center">
+<!-- Hero Copy -->
+<div class="lg:col-span-12 max-w-4xl flex flex-col gap-block-md">
+<!-- Main Hero Headline -->
+<h1 class="font-display-hero text-3xl md:text-5xl lg:text-[52px] leading-tight font-bold text-on-surface tracking-tight">
+                Software, cybersecurity and AI for businesses that need results.
+              </h1>
+<!-- Subtitle -->
+<p class="font-body-lg text-lg lg:text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                We design and build custom systems, protect your infrastructure and bring artificial intelligence into your processes. Backed by experience shipping at global scale.
+              </p>
+<!-- CTAs -->
+<div class="flex flex-wrap items-center gap-block-md pt-block-xs">
+<a class="inline-flex items-center gap-block-xs font-label-caps text-label-caps px-block-lg py-block-sm bg-primary text-on-primary hover:bg-secondary hover:text-on-secondary transition-all shadow-[0_0_20px_rgba(78,222,163,0.3)] uppercase tracking-wider font-semibold" href="#contacto">
+<span>Request a free diagnostic</span>
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+</a>
+<a class="inline-flex items-center gap-block-xs font-label-caps text-label-caps px-block-lg py-block-sm bg-surface-container text-on-surface hover:bg-surface-container-high hover:text-primary transition-all border border-outline-variant/50 uppercase tracking-wider" href="#servicios">
+<span>Explore Services</span>
+<span class="material-symbols-outlined text-[18px]">south</span>
+</a>
+</div>
+<!-- Telemetry indicators under Hero -->
+<div class="flex flex-wrap items-center gap-x-block-md gap-y-block-2xs pt-block-sm font-code-telemetry text-code-telemetry text-on-surface-variant">
+<span class="flex items-center gap-block-2xs">
+<span class="material-symbols-outlined text-primary text-[16px]">verified</span>
+                  No vendor lock-in
+                </span>
+<span class="flex items-center gap-block-2xs">
+<span class="material-symbols-outlined text-secondary text-[16px]">schedule</span>
+                  Reply within 48 business hours
+                </span>
+<span class="flex items-center gap-block-2xs">
+<span class="material-symbols-outlined text-tertiary text-[16px]">code</span>
+                  You own 100% of the code
+                </span>
+</div>
+</div>
+</div>
+<!-- Credential Stats Highlights -->
+<div class="mt-block-2xl bg-surface-container border border-surface-container-high p-block-lg shadow-xl">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-block-lg divide-y sm:divide-y-0 sm:divide-x divide-surface-container-high">
+<div class="flex flex-col pt-3 sm:pt-0 sm:px-4 first:px-0">
+<span class="font-headline-xl text-3xl lg:text-4xl text-primary font-bold tracking-tight">11+ Years</span>
+<span class="font-label-caps text-label-caps text-on-surface font-semibold uppercase mt-block-2xs">Production Experience</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Software, security and ML systems</span>
+</div>
+<div class="flex flex-col pt-3 sm:pt-0 sm:px-4">
+<span class="font-headline-xl text-3xl lg:text-4xl text-secondary font-bold tracking-tight">100M+</span>
+<span class="font-label-caps text-label-caps text-on-surface font-semibold uppercase mt-block-2xs">Global Scale</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Devices running our technology</span>
+</div>
+<div class="flex flex-col pt-3 sm:pt-0 sm:px-4">
+<span class="font-headline-xl text-3xl lg:text-4xl text-tertiary font-bold tracking-tight">Patents</span>
+<span class="font-label-caps text-label-caps text-on-surface font-semibold uppercase mt-block-2xs">US &amp; international</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">ML-based threat detection</span>
+</div>
+<div class="flex flex-col pt-3 sm:pt-0 sm:px-4">
+<span class="font-headline-xl text-3xl lg:text-4xl text-primary font-bold tracking-tight">1,500+</span>
+<span class="font-label-caps text-label-caps text-on-surface font-semibold uppercase mt-block-2xs">Scientific citations</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Researchers trained at top universities</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- SECTION: SERVICIOS -->
+<section class="w-full bg-surface-container-lowest py-block-3xl border-b border-surface-container-high" id="servicios">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-block-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-block-md">
+<div class="flex flex-col gap-block-xs">
+<span class="font-label-caps text-label-caps text-secondary uppercase font-bold tracking-wider">ENGINEERING SOLUTIONS</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface font-bold">Our 4 Service Pillars</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+              Enterprise-grade capabilities for growing businesses, with tangible deliverables and code you fully own.
+            </p>
+</div>
+<!-- 4 Service Pillars Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-block-lg">
+<!-- Pillar 1: Software a medida -->
+<div class="bg-surface-container p-block-lg border border-surface-container-high hover:border-primary/50 transition-all flex flex-col justify-between group shadow-lg">
+<div class="flex flex-col gap-block-sm">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 bg-primary/10 border border-primary/30 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[26px]">code</span>
+</div>
+<span class="font-code-telemetry text-code-telemetry text-primary">PILAR.01 // DEV-CORE</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-colors font-bold mt-2">
+                  Custom software
+                </h3>
+<p class="font-body-lg text-primary text-sm font-medium">
+                  "Systems that fit your business, not the other way around."
+                </p>
+<ul class="flex flex-col gap-block-xs pt-block-xs text-on-surface-variant font-body-md">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
+<span>Internal systems and integrations</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
+<span>Process automation and APIs</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
+<span>Real-time data pipelines</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
+<span>Cloud or on-premise deployment</span>
+</li>
+</ul>
+</div>
+<div class="pt-block-md mt-block-sm border-t border-surface-container-high flex flex-wrap items-center gap-block-xs">
+<span class="px-block-xs py-1 bg-surface-container-lowest text-[11px] font-code-telemetry text-on-surface-variant border border-outline-variant/30">Backend &amp; Frontend</span>
+<span class="px-block-xs py-1 bg-surface-container-lowest text-[11px] font-code-telemetry text-on-surface-variant border border-outline-variant/30">Cloud Native / On-Premise</span>
+<span class="px-block-xs py-1 bg-surface-container-lowest text-[11px] font-code-telemetry text-on-surface-variant border border-outline-variant/30">Data Architecture</span>
+</div>
+</div>
+<!-- Pillar 2: Ciberseguridad -->
+<div class="bg-surface-container p-block-lg border border-surface-container-high hover:border-secondary/50 transition-all flex flex-col justify-between group shadow-lg">
+<div class="flex flex-col gap-block-sm">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 bg-secondary/10 border border-secondary/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[26px]">shield</span>
+</div>
+<span class="font-code-telemetry text-code-telemetry text-secondary">PILAR.02 // CYBERSEC</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-secondary transition-colors font-bold mt-2">
+                  Cybersecurity
+                </h3>
+<p class="font-body-lg text-secondary text-sm font-medium">
+                  "Protect your data and operations before it is too late."
+                </p>
+<ul class="flex flex-col gap-block-xs pt-block-xs text-on-surface-variant font-body-md">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span>
+<span>Audits and threat modeling</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span>
+<span>System and network hardening</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span>
+<span>Intrusion, fraud and bot detection</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">check_circle</span>
+<span>Certificate infrastructure and encryption</span>
+</li>
+</ul>
+</div>
+<div class="pt-block-md mt-block-sm border-t border-surface-container-high flex flex-wrap items-center gap-block-xs">
+<span class="px-block-xs py-1 bg-surface-container-lowest text-[11px] font-code-telemetry text-on-surface-variant border border-outline-variant/30">Zero-Trust</span>
+<span class="px-block-xs py-1 bg-surface-container-lowest text-[11px] font-code-telemetry text-on-surface-variant border border-outline-variant/30">Hardening</span>
+<span class="px-block-xs py-1 bg-surface-container-lowest text-[11px] font-code-telemetry text-on-surface-variant border border-outline-variant/30">Anti-Fraud</span>
+</div>
+</div>
+<!-- Pillar 3: Inteligencia artificial -->
+<div class="bg-surface-container p-block-lg border border-surface-container-high hover:border-tertiary/50 transition-all flex flex-col justify-between group shadow-lg">
+<div class="flex flex-col gap-block-sm">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 bg-tertiary/10 border border-tertiary/30 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[26px]">psychology</span>
+</div>
+<span class="font-code-telemetry text-code-telemetry text-tertiary">PILAR.03 // AI-ML</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-tertiary transition-colors font-bold mt-2">
+                  Artificial intelligence
+                </h3>
+<p class="font-body-lg text-tertiary text-sm font-medium">
+                  "AI applied to concrete problems, in production."
+                </p>
+<ul class="flex flex-col gap-block-xs pt-block-xs text-on-surface-variant font-body-md">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px] mt-0.5">check_circle</span>
+<span>Custom models for your business</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px] mt-0.5">check_circle</span>
+<span>Real-time anomaly detection</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px] mt-0.5">check_circle</span>
+<span>LLM integration into your workflows</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px] mt-0.5">check_circle</span>
+<span>Model operations and monitoring (MLOps)</span>
+</li>
+</ul>
+</div>
+<div class="pt-block-md mt-block-sm border-t border-surface-container-high flex flex-wrap items-center gap-block-xs">
+<span class="px-block-xs py-1 bg-surface-container-lowest text-[11px] font-code-telemetry text-on-surface-variant border border-outline-variant/30">LLM Pipelines</span>
+<span class="px-block-xs py-1 bg-surface-container-lowest text-[11px] font-code-telemetry text-on-surface-variant border border-outline-variant/30">Anomaly Detection</span>
+<span class="px-block-xs py-1 bg-surface-container-lowest text-[11px] font-code-telemetry text-on-surface-variant border border-outline-variant/30">MLOps</span>
+</div>
+</div>
+<!-- Pillar 4: Sistemas autónomos y comunicaciones -->
+<div class="bg-surface-container p-block-lg border border-surface-container-high hover:border-primary/50 transition-all flex flex-col justify-between group shadow-lg">
+<div class="flex flex-col gap-block-sm">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 bg-primary/10 border border-primary/30 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[26px]">sensors</span>
+</div>
+<span class="font-code-telemetry text-code-telemetry text-primary">PILAR.04 // AUTONOMOUS</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-primary transition-colors font-bold mt-2">
+                  Autonomous systems &amp; communications
+                </h3>
+<p class="font-body-lg text-primary text-sm font-medium">
+                  "Connectivity and control for drones, robots and IoT."
+                </p>
+<ul class="flex flex-col gap-block-xs pt-block-xs text-on-surface-variant font-body-md">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
+<span>Communication architecture for fleets</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
+<span>Resilient, self-healing mesh networks</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
+<span>Telemetry and edge computing</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">check_circle</span>
+<span>Field network security</span>
+</li>
+</ul>
+</div>
+<div class="pt-block-md mt-block-sm border-t border-surface-container-high flex flex-wrap items-center gap-block-xs">
+<span class="px-block-xs py-1 bg-surface-container-lowest text-[11px] font-code-telemetry text-on-surface-variant border border-outline-variant/30">Mesh Networks</span>
+<span class="px-block-xs py-1 bg-surface-container-lowest text-[11px] font-code-telemetry text-on-surface-variant border border-outline-variant/30">Edge Telemetry</span>
+<span class="px-block-xs py-1 bg-surface-container-lowest text-[11px] font-code-telemetry text-on-surface-variant border border-outline-variant/30">Drones &amp; Robotics</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: POR QUÉ VALEN -->
+<section class="max-w-7xl mx-auto px-6 lg:px-12 py-block-3xl w-full border-b border-surface-container-high" id="por-que-valen">
+<div class="flex flex-col gap-block-xl">
+<div class="flex flex-col gap-block-xs max-w-3xl">
+<div class="inline-flex items-center gap-block-xs self-start px-block-sm py-block-2xs bg-surface-container border border-primary/30">
+<span class="material-symbols-outlined text-primary text-[18px]">military_tech</span>
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold">TRACK RECORD &amp; SCIENTIFIC BACKING</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface font-bold">
+              Why Valen Solutions
+            </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              We combine the rigor of world-class research with hands-on execution in large-scale production environments.
+            </p>
+</div>
+<!-- Credentials Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-block-md">
+<div class="bg-surface-container p-block-lg border border-surface-container-high flex items-start gap-block-md">
+<div class="w-12 h-12 flex-shrink-0 bg-primary/10 border border-primary/30 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">history</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-md text-lg font-bold text-on-surface">11+ years in production</h3>
+<p class="font-body-md text-on-surface-variant">
+                  Over 11 years building software, security and ML systems running in real production.
+                </p>
+</div>
+</div>
+<div class="bg-surface-container p-block-lg border border-surface-container-high flex items-start gap-block-md">
+<div class="w-12 h-12 flex-shrink-0 bg-secondary/10 border border-secondary/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">public</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-md text-lg font-bold text-on-surface">Proven global scale</h3>
+<p class="font-body-md text-on-surface-variant">
+                  Technology deployed and validated on devices used every day by hundreds of millions of people worldwide.
+                </p>
+</div>
+</div>
+<div class="bg-surface-container p-block-lg border border-surface-container-high flex items-start gap-block-md">
+<div class="w-12 h-12 flex-shrink-0 bg-tertiary/10 border border-tertiary/30 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[24px]">auto_stories</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-md text-lg font-bold text-on-surface">Patents + 15 Publications</h3>
+<p class="font-body-md text-on-surface-variant">
+                  US and international patents in machine-learning-based threat detection, backed by more than 15 peer-reviewed publications.
+                </p>
+</div>
+</div>
+<div class="bg-surface-container p-block-lg border border-surface-container-high flex items-start gap-block-md">
+<div class="w-12 h-12 flex-shrink-0 bg-primary/10 border border-primary/30 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">school</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-md text-lg font-bold text-on-surface">A team with scientific training</h3>
+<p class="font-body-md text-on-surface-variant">
+                  Our researchers were trained at some of the world's leading universities, with peer-reviewed publications and more than 1,500 citations, plus experience leading international engineering teams.
+                </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: CÓMO TRABAJAMOS -->
+<section class="w-full bg-surface-container-lowest py-block-3xl border-b border-surface-container-high" id="como-trabajamos">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-block-xl">
+<div class="flex flex-col gap-block-xs">
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold tracking-wider">TRANSPARENT METHODOLOGY</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface font-bold">How We Work</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+              A structured, predictable process designed to minimize technical and budget risk.
+            </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-block-md">
+<div class="bg-surface-container p-block-lg border border-surface-container-high flex flex-col gap-block-sm relative">
+<div class="flex items-center justify-between">
+<span class="font-headline-xl text-4xl font-bold text-primary">01</span>
+<span class="material-symbols-outlined text-primary text-[24px]">chat</span>
+</div>
+<h3 class="font-headline-md text-xl font-bold text-on-surface">Discovery</h3>
+<p class="font-body-md text-on-surface-variant text-sm leading-relaxed">
+                A free call to understand your problem, your current systems and your operating context.
+              </p>
+</div>
+<div class="bg-surface-container p-block-lg border border-surface-container-high flex flex-col gap-block-sm relative">
+<div class="flex items-center justify-between">
+<span class="font-headline-xl text-4xl font-bold text-secondary">02</span>
+<span class="material-symbols-outlined text-secondary text-[24px]">description</span>
+</div>
+<h3 class="font-headline-md text-xl font-bold text-on-surface">Proposal</h3>
+<p class="font-body-md text-on-surface-variant text-sm leading-relaxed">
+                Clear scope, defined timeline and fixed price. No surprises or hidden costs.
+              </p>
+</div>
+<div class="bg-surface-container p-block-lg border border-surface-container-high flex flex-col gap-block-sm relative">
+<div class="flex items-center justify-between">
+<span class="font-headline-xl text-4xl font-bold text-tertiary">03</span>
+<span class="material-symbols-outlined text-tertiary text-[24px]">sync</span>
+</div>
+<h3 class="font-headline-md text-xl font-bold text-on-surface">Iterative delivery</h3>
+<p class="font-body-md text-on-surface-variant text-sm leading-relaxed">
+                Visible results every few weeks, integrating your feedback and validation at each stage.
+              </p>
+</div>
+<div class="bg-surface-container p-block-lg border border-surface-container-high flex flex-col gap-block-sm relative">
+<div class="flex items-center justify-between">
+<span class="font-headline-xl text-4xl font-bold text-primary">04</span>
+<span class="material-symbols-outlined text-primary text-[24px]">published_with_changes</span>
+</div>
+<h3 class="font-headline-md text-xl font-bold text-on-surface">Support</h3>
+<p class="font-body-md text-on-surface-variant text-sm leading-relaxed">
+                Close support after delivery to keep the system running at its best.
+              </p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: COMPARATIVA -->
+<section class="max-w-7xl mx-auto px-6 lg:px-12 py-block-3xl w-full border-b border-surface-container-high" id="comparativa">
+<div class="flex flex-col gap-block-xl">
+<div class="flex flex-col gap-block-xs max-w-3xl">
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold tracking-wider">OPERATIONAL ADVANTAGES</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface font-bold">
+              Why do growing SMBs choose Valen?
+            </h2>
+<p class="font-body-lg text-body-lg text-primary font-medium">
+              Enterprise-grade engineering without the bureaucracy or the cost of a large consultancy.
+            </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-block-lg">
+<!-- Con Valen Solutions -->
+<div class="bg-surface-container p-block-lg border-2 border-primary/40 shadow-2xl flex flex-col gap-block-md">
+<div class="flex items-center justify-between pb-block-xs bg-surface-container-high px-block-sm py-block-2xs border-b border-primary/20">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 bg-primary rounded-full"></span>
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold">WITH VALEN SOLUTIONS</span>
+</div>
+<span class="font-code-telemetry text-code-telemetry text-primary font-semibold">AGILE MODEL</span>
+</div>
+<div class="flex flex-col gap-block-md">
+<div class="flex items-start gap-block-sm">
+<div class="p-block-2xs bg-primary/10 text-primary border border-primary/20">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-base font-bold text-on-surface">Weeks, not months</span>
+<span class="font-body-md text-sm text-on-surface-variant">Working deliverables in production from the first weeks.</span>
+</div>
+</div>
+<div class="flex items-start gap-block-sm">
+<div class="p-block-2xs bg-primary/10 text-primary border border-primary/20">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-base font-bold text-on-surface">You own the code</span>
+<span class="font-body-md text-sm text-on-surface-variant">In your repository, fully documented, with no surprise licenses.</span>
+</div>
+</div>
+<div class="flex items-start gap-block-sm">
+<div class="p-block-2xs bg-primary/10 text-primary border border-primary/20">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-base font-bold text-on-surface">Talk to the builder</span>
+<span class="font-body-md text-sm text-on-surface-variant">No account managers or middlemen. Direct communication with senior engineers.</span>
+</div>
+</div>
+<div class="flex items-start gap-block-sm">
+<div class="p-block-2xs bg-primary/10 text-primary border border-primary/20">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-base font-bold text-on-surface">Fixed price</span>
+<span class="font-body-md text-sm text-on-surface-variant">Clearly defined scope and milestones, with no overruns or unexpected invoices.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Consultora Tradicional -->
+<div class="bg-surface-container-low p-block-lg border border-outline-variant/30 opacity-90 flex flex-col gap-block-md">
+<div class="flex items-center justify-between pb-block-xs bg-surface-container-lowest px-block-sm py-block-2xs border-b border-surface-container">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 bg-error rounded-full"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase font-bold">TRADITIONAL CONSULTANCY</span>
+</div>
+<span class="font-code-telemetry text-code-telemetry text-error">LEGACY MODEL</span>
+</div>
+<div class="flex flex-col gap-block-md">
+<div class="flex items-start gap-block-sm">
+<div class="p-block-2xs bg-error/10 text-error border border-error/20">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-base font-bold text-on-surface">Months of discovery</span>
+<span class="font-body-md text-sm text-on-surface-variant">Endless meetings and assessments before a single line of code is written.</span>
+</div>
+</div>
+<div class="flex items-start gap-block-sm">
+<div class="p-block-2xs bg-error/10 text-error border border-error/20">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-base font-bold text-on-surface">Closed systems</span>
+<span class="font-body-md text-sm text-on-surface-variant">Locked into the vendor forever, with captive maintenance costs.</span>
+</div>
+</div>
+<div class="flex items-start gap-block-sm">
+<div class="p-block-2xs bg-error/10 text-error border border-error/20">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-base font-bold text-on-surface">Seniors in the pitch, juniors in the code</span>
+<span class="font-body-md text-sm text-on-surface-variant">The experienced team disappears once the contract is signed.</span>
+</div>
+</div>
+<div class="flex items-start gap-block-sm">
+<div class="p-block-2xs bg-error/10 text-error border border-error/20">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-base font-bold text-on-surface">Growing budget</span>
+<span class="font-body-md text-sm text-on-surface-variant">Extra hours and variable costs that inflate the project without warning.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: FAQ -->
+<section class="w-full bg-surface-container-lowest py-block-3xl border-b border-surface-container-high" id="faq">
+<div class="max-w-4xl mx-auto px-6 lg:px-12 flex flex-col gap-block-xl">
+<div class="flex flex-col gap-block-xs text-center items-center">
+<span class="font-label-caps text-label-caps text-secondary uppercase font-bold tracking-wider">COMMON QUESTIONS</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface font-bold">Frequently Asked Questions</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+              Straight answers to the questions our clients ask most.
+            </p>
+</div>
+<div class="flex flex-col gap-block-sm">
+<details class="group bg-surface-container border border-surface-container-high open:border-primary/50 transition-all">
+<summary class="flex items-center justify-between p-block-md cursor-pointer select-none">
+<span class="font-headline-md text-base md:text-lg font-semibold text-on-surface group-hover:text-primary transition-colors">
+                  What does the free diagnostic include?
+                </span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-transform group-open:rotate-180">
+                  expand_more
+                </span>
+</summary>
+<div class="px-block-md pb-block-md text-on-surface-variant font-body-md leading-relaxed border-t border-surface-container-high/50 pt-block-xs">
+                A one-hour call with a senior engineer to analyze your current problem, assess technical feasibility and propose a concrete path. At the end you get a summary of the bottlenecks we found and a scope proposal, with no obligation to hire.
+              </div>
+</details>
+<details class="group bg-surface-container border border-surface-container-high open:border-secondary/50 transition-all">
+<summary class="flex items-center justify-between p-block-md cursor-pointer select-none">
+<span class="font-headline-md text-base md:text-lg font-semibold text-on-surface group-hover:text-secondary transition-colors">
+                  Do you work with systems we already have?
+                </span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-secondary transition-transform group-open:rotate-180">
+                  expand_more
+                </span>
+</summary>
+<div class="px-block-md pb-block-md text-on-surface-variant font-body-md leading-relaxed border-t border-surface-container-high/50 pt-block-xs">
+                Yes. There is no need to start from scratch. We analyze your existing infrastructure and software to integrate new features, modernize outdated components or fix specific performance or security issues without stopping your operations.
+              </div>
+</details>
+<details class="group bg-surface-container border border-surface-container-high open:border-tertiary/50 transition-all">
+<summary class="flex items-center justify-between p-block-md cursor-pointer select-none">
+<span class="font-headline-md text-base md:text-lg font-semibold text-on-surface group-hover:text-tertiary transition-colors">
+                  Who owns the code you build?
+                </span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-tertiary transition-transform group-open:rotate-180">
+                  expand_more
+                </span>
+</summary>
+<div class="px-block-md pb-block-md text-on-surface-variant font-body-md leading-relaxed border-t border-surface-container-high/50 pt-block-xs">
+                You do, 100%. All source code, technical documentation and configuration are delivered to your own repository. No vendor lock-in and no recurring license fees for the software we build for you.
+              </div>
+</details>
+<details class="group bg-surface-container border border-surface-container-high open:border-primary/50 transition-all">
+<summary class="flex items-center justify-between p-block-md cursor-pointer select-none">
+<span class="font-headline-md text-base md:text-lg font-semibold text-on-surface group-hover:text-primary transition-colors">
+                  Do you offer support after delivery?
+                </span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-transform group-open:rotate-180">
+                  expand_more
+                </span>
+</summary>
+<div class="px-block-md pb-block-md text-on-surface-variant font-body-md leading-relaxed border-t border-surface-container-high/50 pt-block-xs">
+                Yes. Every project includes a warranty and post-deployment support period to ensure a smooth transition. We also offer optional monthly maintenance agreements covering continuous monitoring, updates and improvements.
+              </div>
+</details>
+</div>
+</div>
+</section>
+<!-- SECTION: CONTACTO -->
+<section class="w-full bg-surface-container-low py-block-3xl relative" id="contacto">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-block-xl items-start">
+<!-- Left Info & Contact Details -->
+<div class="lg:col-span-5 flex flex-col gap-block-md">
+<div class="inline-flex items-center gap-block-xs self-start px-block-sm py-block-2xs bg-surface-container-lowest border border-primary/40">
+<span class="w-2 h-2 bg-primary"></span>
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold">DIRECT CONTACT</span>
+</div>
+<h2 class="font-headline-xl text-3xl md:text-4xl text-on-surface font-bold">
+                Let's start a technical conversation.
+              </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                Book a free one-hour diagnostic session to review the technology and operational challenges of your business.
+              </p>
+<div class="flex flex-col gap-block-sm pt-block-xs">
+<div class="p-block-sm bg-surface-container border border-surface-container-high flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[24px]">timer</span>
+<div class="flex flex-col">
+<span class="font-headline-md text-sm font-bold text-on-surface">Fast response</span>
+<span class="font-body-sm text-xs text-on-surface-variant">We reply within 48 business hours.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Form -->
+<div class="lg:col-span-7 bg-surface-container border border-surface-container-high p-block-xl shadow-2xl">
+<div class="flex items-center justify-between pb-block-xs mb-block-md border-b border-surface-container-high">
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold">DIAGNOSTIC REQUEST</span>
+<span class="font-code-telemetry text-xs text-on-surface-variant">CONFIDENTIAL</span>
+</div>
+<form action="https://api.web3forms.com/submit" class="flex flex-col gap-block-md" method="POST">
+<input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY"/>
+<input type="hidden" name="subject" value="Diagnostic request from valen.solutions"/>
+<input type="hidden" name="from_name" value="Valen Solutions"/>
+<input type="hidden" name="redirect" value="https://valen.solutions/en/thanks.html"/>
+<input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off"/>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-block-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-caps text-xs text-on-surface-variant uppercase font-semibold" for="f-name">Full Name *</label>
+<input id="f-name" name="name" autocomplete="name" class="w-full bg-surface-container-lowest border border-surface-container-high focus:border-primary focus:ring-1 focus:ring-primary px-block-sm py-2.5 text-on-surface font-body-md text-sm placeholder:text-on-surface-variant/40 outline-none transition-all" placeholder="e.g. John Smith" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-caps text-xs text-on-surface-variant uppercase font-semibold" for="f-email">Work Email *</label>
+<input id="f-email" name="email" autocomplete="email" class="w-full bg-surface-container-lowest border border-surface-container-high focus:border-primary focus:ring-1 focus:ring-primary px-block-sm py-2.5 text-on-surface font-body-md text-sm placeholder:text-on-surface-variant/40 outline-none transition-all" placeholder="john@company.com" required="" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-caps text-xs text-on-surface-variant uppercase font-semibold" for="f-company">Company / Organization <span class="text-on-surface-variant/50 lowercase">(optional)</span></label>
+<input id="f-company" name="company" autocomplete="organization" class="w-full bg-surface-container-lowest border border-surface-container-high focus:border-primary focus:ring-1 focus:ring-primary px-block-sm py-2.5 text-on-surface font-body-md text-sm placeholder:text-on-surface-variant/40 outline-none transition-all" placeholder="e.g. Global Logistics Inc." type="text"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-caps text-xs text-on-surface-variant uppercase font-semibold" for="f-message">How can we help? *</label>
+<textarea id="f-message" name="message" class="w-full bg-surface-container-lowest border border-surface-container-high focus:border-primary focus:ring-1 focus:ring-primary p-block-sm text-on-surface font-body-md text-sm placeholder:text-on-surface-variant/40 outline-none transition-all resize-none" placeholder="Tell us about your current infrastructure, software project, cybersecurity or AI needs..." required="" rows="4"></textarea>
+</div>
+<div class="h-captcha" data-captcha="true" data-theme="dark"></div>
+<div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-block-sm">
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 font-label-caps text-label-caps px-block-xl py-block-sm bg-primary text-on-primary hover:bg-secondary hover:text-on-secondary transition-all font-bold uppercase tracking-wider shadow-md" type="submit">
+<span>Request diagnostic</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+<span class="font-code-telemetry text-[11px] text-on-surface-variant text-center sm:text-right">
+                    Free, with no commercial commitment
+                  </span>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- FOOTER -->
+<footer class="w-full bg-surface-container-lowest border-t border-surface-container-high">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 pt-block-3xl pb-block-2xl">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-block-xl pb-block-2xl">
+<div class="lg:col-span-6 flex flex-col gap-block-md">
+<div class="flex items-center gap-block-sm">
+<img alt="" class="h-8 w-auto object-contain" src="/favicon.svg"/>
+<span class="font-headline-md text-headline-md text-on-surface tracking-tight uppercase font-bold">Valen Solutions</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm leading-relaxed">
+            Software, cybersecurity and artificial intelligence for businesses that need tangible results.
+          </p>
+</div>
+<div class="lg:col-span-3 flex flex-col gap-block-sm">
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold">Services</span>
+<div class="flex flex-col gap-block-xs">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#servicios">Custom software</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#servicios">Cybersecurity &amp; Hardening</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#servicios">Applied Artificial Intelligence</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#servicios">Autonomous systems &amp; communications</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#comparativa">Agile model for SMBs</a>
+</div>
+</div>
+<div class="lg:col-span-3 flex flex-col gap-block-sm">
+<span class="font-label-caps text-label-caps text-secondary uppercase font-bold">Navigation</span>
+<div class="flex flex-col gap-block-xs font-body-sm text-body-sm text-on-surface-variant">
+<a class="hover:text-on-surface transition-colors" href="#inicio">Home</a>
+<a class="hover:text-on-surface transition-colors" href="#servicios">Services</a>
+<a class="hover:text-on-surface transition-colors" href="#por-que-valen">About</a>
+<a class="hover:text-on-surface transition-colors" href="#como-trabajamos">How we work</a>
+<a class="hover:text-on-surface transition-colors" href="#contacto">Contact &amp; Diagnostic</a>
+</div>
+<div class="mt-block-xs flex flex-col gap-1">
+<span class="font-label-caps text-xs text-on-surface-variant uppercase">Language</span>
+<div class="flex items-center gap-2 font-code-telemetry text-xs">
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="/" hreflang="es">Español (ES)</a>
+<span class="text-on-surface-variant">·</span>
+<span class="text-primary font-bold">English</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-block-lg border-t border-surface-container-high flex flex-col md:flex-row items-center justify-between gap-block-md font-code-telemetry text-code-telemetry text-on-surface-variant text-xs">
+<div>
+          © <span id="current-year">2026</span> Valen Solutions. All rights reserved.
+        </div>
+<div class="flex items-center gap-block-md">
+<a class="hover:text-on-surface transition-colors" href="#contacto">Contact</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+<script src="https://web3forms.com/client/script.js" async defer></script>
+</body></html>
